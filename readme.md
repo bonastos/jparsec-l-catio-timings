@@ -8,20 +8,22 @@ So I decided to use a profiler for measuring. Jprofiler gave consistent, reprodu
 
 I measured 4 scenarios. Each has a named function, so I can extract the times from the calltree.
 
- .1 Base Case : Simple Parser<Strin>,many()
- .2 sequence(INDEX, Parser<Strin>),many()
- .3 sequence(LOCATION, Parser<Strin>),many()
- .4 LOCATION_EOF.next(sequence(LOCATION, Parser<Strin>),many())
+```
+ 1. Base Case : Simple Parser<Strin>,many()
+ 2. sequence(INDEX, Parser<Strin>),many()
+ 3. sequence(LOCATION, Parser<Strin>),many()
+ 4. LOCATION_EOF.next(sequence(LOCATION, Parser<Strin>),many())
+ ```
  
  LOCATION_EOF is a parser that returns the location of EOF. Thus all following locations will
  be looked up in the cache.
 
-scenario | t[ms] | t-t_base[ms] | t/t_base{%]
-
-base |1,080	|| 
-base + index | 1.230 | 0.150 | 113,9
-base + location | 1.251	0,171 | 115.8
-base + location_p | 1.635 | 0.555 | 151.4
+| scenario | t[ms] | t-t_base[ms] | t/t_base{%]
+| -------- | ----- | ------------ | -----------
+| base |1,080	|| 
+| base + index | 1.230 | 0.150 | 113,9
+| base + location | 1.251	0,171 | 115.8
+| base + location_p | 1.635 | 0.555 | 151.4
 
 My conclusions:
 
