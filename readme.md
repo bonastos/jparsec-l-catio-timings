@@ -20,9 +20,9 @@ I measured 4 scenarios. Each has a named function, so I can extract the times fr
 
 | scenario | t[ms] | t-t_base[ms] | t/t_base{%]
 | -------- | ----- | ------------ | -----------
-| base |1,080	|| 
+| base |1,080	| | 
 | base + index | 1.230 | 0.150 | 113,9
-| base + location | 1.251	0,171 | 115.8
+| base + location | 1.251 |	0,171 | 115.8
 | base + location_p | 1.635 | 0.555 | 151.4
 
 My conclusions:
