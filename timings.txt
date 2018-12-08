@@ -1,0 +1,6 @@
+scenario			t[ms]	t-tb	t/tb{%]
+
+base				1,080	
+base + index 		1.230	0.150	113,9
+base + location		1.251	0,171	115.8
+base + location_p	1.635	0.555	151.4
